@@ -65,3 +65,40 @@ describe('constructor', () => {
       expect(pet.hunger).toEqual(0);
     });
   });
+  describe('check up', () => {
+    it('returns how the pet is feeling', () => {
+      const pet = new Pet('fido');
+      pet.hunger = 7;
+      pet.fitness = 2;
+      pet.checkUp();
+      expect(pet.checkUp()).toEqual('I am hungry AND I need a walk');
+    });
+  });
+  describe('check up', () => {
+    it('returns how the pet is feeling', () => {
+      const pet = new Pet('fido');
+      pet.hunger = 4;
+      pet.fitness = 2;
+      pet.checkUp();
+      expect(pet.checkUp()).toEqual('I need a walk');
+    });
+  });
+  describe('check up', () => {
+    it('returns how the pet is feeling', () => {
+      const pet = new Pet('fido');
+      pet.hunger = 7;
+      pet.fitness = 7;
+      pet.checkUp();
+      expect(pet.checkUp()).toEqual('I am hungry');
+    });
+  });
+  describe('check up', () => {
+    it('returns how the pet is feeling', () => {
+      const pet = new Pet('fido');
+      pet.hunger = 2;
+      pet.fitness = 7;
+      pet.checkUp();
+      expect(pet.checkUp()).toEqual('I feel great!');
+    });
+  });
+  
