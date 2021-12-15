@@ -65,6 +65,13 @@ describe('constructor', () => {
       expect(pet.hunger).toEqual(0);
     });
   });
+  describe('feed', () => {
+    it('throws an error if the pet is not alive', () => {
+        const pet = new Pet('Fido');
+        pet.age = 30;
+        expect(() => pet.feed()).toThrow('Your pet is no longer alive :(');
+    });
+  });
   describe('check up', () => {
     it('returns how the pet is feeling', () => {
       const pet = new Pet('fido');
@@ -101,4 +108,27 @@ describe('constructor', () => {
       expect(pet.checkUp()).toEqual('I feel great!');
     });
   });
+  // describe('isAlive', () => {
+  //   it('returns false if fitness < 1', () => {
+  //     pet.fitness = 0;
+  //     expect(pet.isAlive).toEqual(false);
+  //   });
+  //   it('returns true if fitness > 0', () => {
+  //     expect(pet.isAlive).toEqual(true);
+  //   });
+  //   it('returns false if hunger > 9', () => {
+  //     pet.hunger = 10;
+  //     expect(pet.isAlive).toEqual(false);
+  //   });
+  //   it('returns true if hunger < 10', () => {
+  //     expect(pet.isAlive).toEqual(true);
+  //   });
+  //   it('returns false if age > 29', () => {
+  //     pet.age = 30;
+  //     expect(pet.isAlive).toEqual(false);
+  //   });
+  //   it('returns true if age < 30', () => {
+  //     expect(pet.isAlive).toEqual(true);
+  //   });
+  // });
   
